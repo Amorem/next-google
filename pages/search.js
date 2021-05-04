@@ -29,7 +29,7 @@ export default Search;
 export async function getServerSideProps(context) {
   const useDummyData = true;
   const { term } = context.query;
-  const startIndex = context.query.start || "0";
+  const startIndex = Number(context.query.start) || "0";
   //   console.log(process.env.API_KEY, process.env.CONTEXT_KEY);
   const data = useDummyData
     ? Response
