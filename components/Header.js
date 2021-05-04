@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useRef } from "react";
 import Avatar from "./Avatar";
+import HeaderOptions from "./HeaderOptions";
 
 function Header() {
   const router = useRouter();
@@ -46,6 +47,7 @@ function Header() {
           url="https://comidoc.net/assets/contributors/3d5d695d-75b5-4d4a-b276-7772bca9367b.webp"
         />
       </div>
+      <HeaderOptions />
     </header>
   );
 }
