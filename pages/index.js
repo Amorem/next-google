@@ -4,8 +4,18 @@ import { ViewGridIcon, MicrophoneIcon } from "@heroicons/react/solid";
 import { SearchIcon } from "@heroicons/react/outline";
 import Image from "next/image";
 import Footer from "../components/Footer";
+import { useRef } from "react";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const router = useRouter();
+  const inputRef = useRef(null);
+  function search(event) {
+    event.preventDefault();
+    const term = inputRef.current.value;
+    if (!term) return;
+    router.push(`/search?term=${term}`);
+  }
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       <Head>
@@ -38,12 +48,17 @@ export default function Home() {
           <input
             type="text"
             className="flex-grow focus-within:outline-none"
+            ref={inputRef}
           ></input>
           <MicrophoneIcon className="h-5" />
         </div>
         <div className="flex flex-col justify-center w-1/2 mt-8 space-y-2 sm:space-y-0 sm:flex-row sm:space-x-4">
-          <button className="btn">Google Search</button>
-          <button className="btn">I'm feeling lucky</button>
+          <button onClick={search} className="btn">
+            Google Search
+          </button>
+          <button onClick={search} className="btn">
+            I'm feeling lucky
+          </button>
         </div>
       </form>
       <Footer />
