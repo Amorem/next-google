@@ -40,6 +40,10 @@ export default function Home() {
           ></input>
           <MicrophoneIcon className="h-5" />
         </div>
+        <div className="flex flex-col justify-center w-1/2 mt-8 space-y-2 sm:space-y-0 sm:flex-row sm:space-x-4">
+          <button className="btn">Google Search</button>
+          <button className="btn">I'm feeling lucky</button>
+        </div>
       </form>
     </div>
   );
