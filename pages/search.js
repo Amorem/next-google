@@ -3,17 +3,23 @@ import Head from "next/head";
 
 import Response from "../Response";
 import Header from "../components/Header";
+import { useRouter } from "next/router";
+
+import SearchResults from "../components/SearchResults";
 
 function Search({ results }) {
-  console.log("results", results);
+  const router = useRouter();
+
   return (
     <div>
       <Head>
-        <title>Search results</title>
+        <title>{router.query.term} - Google Search </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Header />
+
+      <SearchResults results={results} />
     </div>
   );
 }
