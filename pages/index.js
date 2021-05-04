@@ -3,10 +3,11 @@ import Avatar from "../components/Avatar";
 import { ViewGridIcon, MicrophoneIcon } from "@heroicons/react/solid";
 import { SearchIcon } from "@heroicons/react/outline";
 import Image from "next/image";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="flex flex-col items-center justify-center h-screen">
       <Head>
         <title>GoogleNext</title>
         <meta name="description" content="Google-like built with NextJS" />
@@ -26,7 +27,7 @@ export default function Home() {
         </div>
       </header>
       {/* Body */}
-      <form className="flex flex-col items-center flex-grow mt-44">
+      <form className="flex flex-col items-center flex-grow w-4/5 mt-44">
         <Image
           src="https://www.google.co.uk/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
           width={300}
@@ -45,6 +46,7 @@ export default function Home() {
           <button className="btn">I'm feeling lucky</button>
         </div>
       </form>
+      <Footer />
     </div>
   );
 }
